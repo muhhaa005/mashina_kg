@@ -1,6 +1,4 @@
 from django.urls import path, include
-
-from .serializers import CarReviewCreateSerializer
 from .views import (
     UserProfileViewSet, ClientViewSet, OwnerViewSet, CarMakeLisAPIView, CarMakeDetailAPIView,
     CarModelListAPIView, CarModelDetailAPIView, CategoryListAPIView, CategoryDetailAPIView, CarCreateAPIView, CarListAPIView, CarDetailAPIView,
@@ -9,7 +7,7 @@ from .views import (
 )
 from rest_framework import routers
 
-router = routers.DefaultRouter()
+router = routers.SimpleRouter()
 router.register(r'users', UserProfileViewSet, basename='user_list')
 router.register(r'clients', ClientViewSet, basename='client_list')
 router.register(r'owners', OwnerViewSet, basename='owner_list')
